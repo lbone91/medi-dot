@@ -109,7 +109,7 @@
 			<div class="row">
 				<div class="col text-right">
 					<el-button @click="resetPerscription">초기화</el-button>
-					<el-button @click="mode = 2">처방전 생성</el-button>
+					<el-button @click="createPerscription">처방전 생성</el-button>
 				</div>
 			</div>
 		</div>
@@ -387,6 +387,18 @@ export default {
 					}
 				},
 			});
+		},
+		createPerscription() {
+			for (let i = 0; i < this.perscription.medicines.length; i++) {
+				for (let j = 0; j < this.medicines.length; j++) {
+					if (
+						this.perscription.medicines[i].number === this.medicines[j].number
+					) {
+						this.perscription.medicines[i].name = this.medicines[j].name;
+					}
+				}
+			}
+			this.mode = 2;
 		},
 		parseData() {
 			this.tempPerscription = JSON.parse(JSON.stringify(this.perscription));
