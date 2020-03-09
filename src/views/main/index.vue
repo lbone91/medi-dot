@@ -411,7 +411,8 @@ export default {
 					this.perscription.medicines.splice(i, 1);
 				}
 			}
-			return this.perscription;
+			console.log(JSON.stringify(this.perscription));
+			return JSON.stringify(this.perscription);
 		},
 		resetPerscription() {
 			this.$msgbox({
