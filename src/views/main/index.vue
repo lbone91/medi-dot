@@ -1,7 +1,7 @@
 <template>
 	<div class="perscription-container">
 		<div style="text-align: center">
-			<p class="font-weight-bold">PSG 처방전 모바일 전송 데모 프로그램</p>
+			<p class="font-weight-bold">Medi Dot 처방전 출력 데모 프로그램</p>
 		</div>
 		<div v-if="mode === 1">
 			<el-form label-position="left" label-width="100px">
@@ -121,151 +121,96 @@
 					<el-button size="mini" @click="mode = 1">뒤로가기</el-button>
 				</div>
 			</div>
+
 			<div class="perscription" :style="styleObject">
-				<input
-					type="text"
-					readonly
-					class="input-color"
-					v-model="year"
-					style="width: 28px; font-size: 12px; position: absolute; top: 194.5px; left: 204px; "
-				/>
-				<input
-					type="text"
-					readonly
-					class="input-color"
-					v-model="month"
-					style="width: 15px; font-size: 12px; position: absolute; top: 194.5px; left: 253px; "
-				/>
-				<input
-					type="text"
-					readonly
-					class="input-color"
-					v-model="day"
-					style="width: 15px; font-size: 12px; position: absolute; top: 194.5px; left: 286px; "
-				/>
-				<input
-					type="text"
-					readonly
-					class="input-color"
-					v-model="perscription.patient.issue_number"
-					style="width: 34px; font-size: 12px; position: absolute; top: 194.5px; left: 351px; "
-				/>
+				<div class="page" id="perscription">
+					<div class="subpage">
+						<span class="grant-number year">
+							{{ year }}
+						</span>
+						<span class="grant-number month">
+							{{ month }}
+						</span>
 
-				<input
-					type="text"
-					readonly
-					class="input-color"
-					v-model="perscription.patient.name"
-					style="width: 200px; height: 45px; font-size: 15px; position: absolute; top: 220px; left: 198px;"
-				/>
-				<input
-					type="text"
-					readonly
-					class="input-color"
-					v-model="perscription.patient.RRN"
-					style="width: 200px;  font-size: 12px; position: absolute; top: 272px; left: 198px; "
-				/>
-				<input
-					type="text"
-					readonly
-					v-model="perscription.hospital.name"
-					class="input-color hospital-info"
-					style="top: 194.5px;"
-				/>
-				<input
-					type="text"
-					readonly
-					v-model="perscription.hospital.tel"
-					class="input-color hospital-info"
-					style="top: 220.5px; "
-				/>
-				<input
-					type="text"
-					readonly
-					v-model="perscription.hospital.fax"
-					class="input-color hospital-info"
-					style="top: 247.5px; "
-				/>
-				<input
-					type="text"
-					readonly
-					v-model="perscription.hospital.email"
-					class="input-color hospital-info"
-					style="top: 271.5px; "
-				/>
-				<input
-					type="text"
-					readonly
-					class="input-color"
-					v-model="perscription.hospital.doctor"
-					style="width: 204px; height: 58px; font-size: 15px; position: absolute; top: 298px; left: 298px; "
-				/>
-				<input
-					type="text"
-					readonly
-					class="input-color"
-					v-model="perscription.hospital.license_type"
-					style="width: 151px;  height: 25px; font-size: 12px; position: absolute; top: 298px; left: 571px;"
-				/>
-				<input
-					type="text"
-					readonly
-					class="input-color"
-					v-model="perscription.hospital.license_number"
-					style="width: 45px; height: 25px; font-size: 12px; position: absolute; top: 330px; left: 611px;"
-				/>
+						<span class="grant-number day">
+							{{ day }}
+						</span>
+						<span class="grant-number issue_number">
+							{{ perscription.patient.issue_number }}
+						</span>
+						<span class="patient-name">
+							{{ perscription.patient.name }}
+						</span>
+						<span class="patient-RRN">
+							{{ perscription.patient.RRN }}
+						</span>
+						<span class="hospital-info hospital-name">
+							{{ perscription.hospital.name }}
+						</span>
+						<span class="hospital-info hospital-tel">
+							{{ perscription.hospital.tel }}
+						</span>
+						<span class="hospital-info hospital-fax">
+							{{ perscription.hospital.fax }}
+						</span>
+						<span class="hospital-info hospital-email">
+							{{ perscription.hospital.email }}
+						</span>
+						<span class="doctor">
+							{{ perscription.hospital.doctor }}
+						</span>
+						<span class="license-type">
+							{{ perscription.hospital.license_type }}
+						</span>
+						<span class="license-number">
+							{{ perscription.hospital.license_number }}
+						</span>
 
-				<!-- medicines name -->
-				<input
-					type="text"
-					readonly
-					v-model="perscription.medicines[i].name"
-					:class="'input-color medicines-name medicines-' + i"
-					v-for="(item, i) in perscription.medicines"
-				/>
-				<!-- medicines day1 -->
-				<input
-					type="text"
-					readonly
-					v-model="perscription.medicines[i].day1"
-					:class="'input-color medicines-day1 medicines-' + i"
-					v-for="(item, i) in perscription.medicines"
-				/>
-				<!-- medicines perday -->
-				<input
-					type="text"
-					readonly
-					v-model="perscription.medicines[i].perday"
-					:class="'input-color medicines-perday medicines-' + i"
-					v-for="(item, i) in perscription.medicines"
-				/>
-				<!-- medicines perday -->
+						<!-- medicines name -->
 
-				<input
-					type="text"
-					readonly
-					v-model="perscription.medicines[i].period"
-					:class="'input-color medicines-period medicines-' + i"
-					v-for="(item, i) in perscription.medicines"
-				/>
-				<!-- medicines perday -->
-				<input
-					type="text"
-					readonly
-					v-model="perscription.medicines[i].help"
-					:class="'input-color medicines-help medicines-' + i"
-					v-for="(item, i) in perscription.medicines"
-				/>
+						<!-- medicines day1 -->
+						<span
+							:class="'medicines-day1 medicines-' + i"
+							v-for="(item, i) in perscription.medicines"
+						>
+							{{ perscription.medicines[i].day1 }}
+						</span>
 
-				<!-- comment -->
-				<el-input
-					type="textarea"
-					readonly
-					:rows="5"
-					style="width: 150px; font-size: 12px; position: absolute; top: 734px; left: 571px;"
-					v-model="perscription.comment"
-				>
-				</el-input>
+						<!-- medicines perday -->
+						<span
+							:class="'medicines-perday medicines-' + i"
+							v-for="(item, i) in perscription.medicines"
+						>
+							{{ perscription.medicines[i].perday }}
+						</span>
+
+						<!-- medicines period -->
+						<span
+							:class="'medicines-period medicines-' + i"
+							v-for="(item, i) in perscription.medicines"
+						>
+							{{ perscription.medicines[i].period }}
+						</span>
+
+						<!-- medicines help -->
+						<span
+							:class="'medicines-help medicines-' + i"
+							v-for="(item, i) in perscription.medicines"
+						>
+							{{ perscription.medicines[i].help }}
+						</span>
+						<span
+							:class="'medicines-name medicines-' + i"
+							v-for="(item, i) in perscription.medicines"
+						>
+							{{ perscription.medicines[i].name }}
+						</span>
+						<!-- comment -->
+						<span class="comment">
+							{{ perscription.comment }}
+						</span>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -273,6 +218,7 @@
 
 <script>
 import { sendPerscription } from '@/api/index';
+import { getDefaultPrintStyle } from '@/utils/style';
 export default {
 	computed: {
 		styleObject() {
@@ -366,27 +312,46 @@ export default {
 				cancelButtonText: '아니오',
 				beforeClose: (action, instance, done) => {
 					if (action === 'confirm') {
-						// this.parseData();
-						// this.perscription = JSON.parse(
-						// 	JSON.stringify(this.tempPerscription),
-						// );
-						sendPerscription(this.parseData())
-							.then(res => {
-								this.perscription = JSON.parse(
-									JSON.stringify(this.tempPerscription),
-								);
-							})
-							.catch(e => {
-								this.perscription = JSON.parse(
-									JSON.stringify(this.tempPerscription),
-								);
-							});
+						//this.sendPerscription();
+						this.print();
 						done();
 					} else {
 						done();
 					}
 				},
 			});
+		},
+		print() {
+			setTimeout(() => {
+				this.printDiv = document.all('perscription');
+				var p = window.open('perscription.html', '_blank');
+				p.document.write(
+					'<!DOCTYPE html>' +
+						'<html>' +
+						'<head>' +
+						'<style>' +
+						getDefaultPrintStyle() +
+						' </style>' +
+						'</head>' +
+						'<body>' +
+						this.printDiv.innerHTML +
+						'</body>' +
+						'</html>',
+				);
+				p.document.close();
+				p.focus();
+				p.window.print();
+				p.close();
+			}, 1000);
+		},
+		sendPerscription() {
+			sendPerscription(this.parseData())
+				.then(res => {
+					this.perscription = JSON.parse(JSON.stringify(this.tempPerscription));
+				})
+				.catch(e => {
+					this.perscription = JSON.parse(JSON.stringify(this.tempPerscription));
+				});
 		},
 		createPerscription() {
 			for (let i = 0; i < this.perscription.medicines.length; i++) {
@@ -411,7 +376,6 @@ export default {
 					this.perscription.medicines.splice(i, 1);
 				}
 			}
-			console.log(JSON.stringify(this.perscription));
 			return JSON.stringify(this.perscription);
 		},
 		resetPerscription() {
@@ -488,6 +452,66 @@ export default {
 	width: 800px;
 	height: 1100px;
 }
+.grant-number {
+	font-size: 12px;
+	position: absolute;
+	top: 194.5px;
+}
+.year {
+	left: 204px;
+}
+.month {
+	left: 253px;
+}
+.day {
+	left: 286px;
+}
+.issue_number {
+	left: 350.5px;
+}
+
+.hospital-name {
+	top: 194.5px;
+}
+.hospital-tel {
+	top: 220.5px;
+}
+.hospital-fax {
+	top: 247.5px;
+}
+.hospital-email {
+	top: 271.5px;
+}
+.patient-name {
+	font-size: 15px;
+	position: absolute;
+	top: 230px;
+	left: 198px;
+}
+.patient-RRN {
+	font-size: 12px;
+	position: absolute;
+	top: 272px;
+	left: 198px;
+}
+.doctor {
+	font-size: 15px;
+	position: absolute;
+	top: 313px;
+	left: 298px;
+}
+.license-type {
+	font-size: 12px;
+	position: absolute;
+	top: 298px;
+	left: 571px;
+}
+.license-number {
+	font-size: 12px;
+	position: absolute;
+	top: 332px;
+	left: 611px;
+}
 .hospital-info {
 	width: 210px;
 	font-size: 12px;
@@ -562,7 +586,13 @@ export default {
 .medicines-9 {
 	top: 682px;
 }
-
+.comment {
+	width: 150px;
+	font-size: 12px;
+	position: absolute;
+	top: 734px;
+	left: 571px;
+}
 .select-height {
 	height: 15px !important;
 }

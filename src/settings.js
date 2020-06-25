@@ -1,5 +1,5 @@
 module.exports = {
-	title: 'Pill So Good',
+	title: 'Medi Dot',
 
 	/**
 	 * @type {boolean} true | false
