@@ -22,9 +22,9 @@ export function getDefaultPrintStyle() {
 		' .hospital-tel {top:6.1cm;} ' +
 		' .hospital-fax {top:6.8cm;} ' +
 		' .hospital-email {top:7.4cm;} ' +
-		' .check { position: absolute; top: 4.6cm; left: 1.9cm;} ' +
-		' .kcd-code1 {font-size: 15px; position: absolute; top: 8.1cm; left: 3.2cm; letter-spacing: 0.7cm;} ' +
-		' .kcd-code2 {font-size: 15px; position: absolute; top: 8.7cm; left: 3.2cm; letter-spacing: 0.7cm;} ' +
+		' .check { position: absolute; top: 4.6cm; left: 1.8cm;} ' +
+		' .kcd-code1 {font-size: 15px; position: absolute; top: 8cm; left: 3.1cm; letter-spacing: 0.7cm;} ' +
+		' .kcd-code2 {font-size: 15px; position: absolute; top: 8.6cm; left: 3.1cm; letter-spacing: 0.7cm;} ' +
 		' .doctor {font-size: 15px; position: absolute; top: 8.2cm; left: 10cm;}' +
 		' .license-type {font-size: 12px; position: absolute; top: 8cm; left: 15.5cm;}' +
 		' .license-number {font-size: 12px; position: absolute; top: 8.7cm; left: 16cm;}' +
