@@ -11,9 +11,9 @@ export function getDefaultPrintStyle() {
 		' box-shadow: initial;  background: initial;  page-break-after: always;   page-break-before: always; } }' +
 		'  div {display: block}' +
 		' .grant-number {font-size: 12px; position: absolute; top: 5.4cm;} ' +
-		' .year {left:3.8cm;} ' +
-		' .month {left:5.2cm;} ' +
-		' .day {left:6.3cm;} ' +
+		' .year {left:3.6cm;} ' +
+		' .month {left:5cm;} ' +
+		' .day {left:6.1cm;} ' +
 		' .issue_number {left:8.2cm;} ' +
 		' .patient-name {font-size: 15px; position: absolute; top: 6.1cm; left: 6cm;}' +
 		' .patient-RRN {font-size: 12px; position: absolute; top: 7.3cm; left: 6cm;} ' +
