@@ -51,6 +51,22 @@
 				</el-form-item>
 				<el-divider></el-divider>
 
+				<label style="font-size: 15px;">질병분류기호</label>
+				<el-form-item class="mb-1" label="질병분류기호" label-width="150px">
+					<el-input
+						style="width: 30%; float:left;"
+						v-model="perscription.kcdCode1"
+						:readonly="true"
+					></el-input>
+					<el-input
+						style="width: 30%; float:left;"
+						v-model="perscription.kcdCode2"
+						:readonly="true"
+					></el-input>
+				</el-form-item>
+
+				<el-divider></el-divider>
+
 				<label style="font-size: 15px;">처방 의약품 정보</label>
 				<div style="margin-bottom: 20px;">
 					<el-button size="small" @click="addTab()">
@@ -125,6 +141,9 @@
 			<div class="perscription" :style="styleObject">
 				<div class="page" id="perscription">
 					<div class="subpage">
+						<span class="check">
+							V
+						</span>
 						<span class="grant-number year">
 							{{ year }}
 						</span>
@@ -156,6 +175,14 @@
 						<span class="hospital-info hospital-email">
 							{{ perscription.hospital.email }}
 						</span>
+
+						<span class="kcd-code1">
+							{{ perscription.kcdCode1 }}
+						</span>
+						<span class="kcd-code2">
+							{{ perscription.kcdCode2 }}
+						</span>
+
 						<span class="doctor">
 							{{ perscription.hospital.doctor }}
 						</span>
@@ -297,6 +324,8 @@ export default {
 						help: '1일 4회 점안',
 					},
 				],
+				kcdCode1: 'H208',
+				kcdCode2: 'H4042',
 				comment: null,
 				dummy: '결제금액 1100',
 			},
@@ -446,6 +475,9 @@ export default {
 	position: absolute;
 	left: 300px;
 }
+.check {
+	display: none;
+}
 .perscription {
 	left: 50px;
 	margin: auto;
@@ -499,6 +531,20 @@ export default {
 	position: absolute;
 	top: 313px;
 	left: 298px;
+}
+.kcd-code1 {
+	font-size: 15px;
+	position: absolute;
+	top: 299px;
+	left: 110px;
+	letter-spacing: 16px;
+}
+.kcd-code2 {
+	font-size: 15px;
+	position: absolute;
+	top: 330px;
+	left: 110px;
+	letter-spacing: 16px;
 }
 .license-type {
 	font-size: 12px;
