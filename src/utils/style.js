@@ -16,15 +16,15 @@ export function getDefaultPrintStyle() {
 		' .day {left:6.3cm;} ' +
 		' .issue_number {left:8.2cm;} ' +
 		' .patient-name {font-size: 15px; position: absolute; top: 6.1cm; left: 6cm;}' +
-		' .patient-RRN {font-size: 12px; position: absolute; top: 7.1cm; left: 6cm;} ' +
+		' .patient-RRN {font-size: 12px; position: absolute; top: 7.3cm; left: 6cm;} ' +
 		' .hospital-info {font-size: 12px; position: absolute; left: 13.5cm; }' +
 		' .hospital-name {top:5.4cm;} ' +
 		' .hospital-tel {top:6.1cm;} ' +
-		' .hospital-fax {top:6.7cm;} ' +
-		' .hospital-email {top:7.3cm;} ' +
+		' .hospital-fax {top:6.8cm;} ' +
+		' .hospital-email {top:7.4cm;} ' +
 		' .doctor {font-size: 15px; position: absolute; top: 8.2cm; left: 10cm;}' +
 		' .license-type {font-size: 12px; position: absolute; top: 8cm; left: 15.5cm;}' +
-		' .license-number {font-size: 12px; position: absolute; top: 8.6cm; left: 16cm;}' +
+		' .license-number {font-size: 12px; position: absolute; top: 8.7cm; left: 16cm;}' +
 		' .comment {width: 5.5cm; padding: 0.5cm; font-size: 12px; position: absolute; top: 18.8cm; left: 14cm;} ' +
 		' .medicines-name {font-size: 12px; position: absolute; left: 2.3cm;  }' +
 		' .medicines-day1 {font-size: 12px; position: absolute; left: 10.5cm; }' +
