@@ -11,6 +11,7 @@ export function getDefaultPrintStyle() {
 		' box-shadow: initial;  background: initial;  page-break-after: always;   page-break-before: always; } }' +
 		'  div {display: block}' +
 		' .grant-number {font-size: 12px; position: absolute; top: 5.4cm;} ' +
+		' .periodOfUse { position: absolute; top: 24.2cm; left: 7.1cm; }' +
 		' .year {left:3.6cm;} ' +
 		' .month {left:5cm;} ' +
 		' .day {left:6.1cm;} ' +

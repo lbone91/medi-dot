@@ -13,6 +13,12 @@
 				<el-form-item class="mb-1" label="교부번호" label-width="150px">
 					<el-input v-model="perscription.patient.issue_number"></el-input>
 				</el-form-item>
+				<el-form-item class="mb-1" label="사용기간" label-width="150px">
+					교부일로부터
+					<el-input style="width:7%" v-model="periodOfUse"></el-input>
+					일간
+				</el-form-item>
+
 				<el-divider></el-divider>
 
 				<label style="font-size: 15px;">의료기관 정보</label>
@@ -150,7 +156,6 @@
 						<span class="grant-number month">
 							{{ month }}
 						</span>
-
 						<span class="grant-number day">
 							{{ day }}
 						</span>
@@ -194,7 +199,13 @@
 						</span>
 
 						<!-- medicines name -->
-
+						<span
+							:class="'medicines-name medicines-' + i"
+							v-for="(item, i) in perscription.medicines"
+						>
+							{{ perscription.medicines[i].number }}
+							{{ perscription.medicines[i].name }}
+						</span>
 						<!-- medicines day1 -->
 						<span
 							:class="'medicines-day1 medicines-' + i"
@@ -226,15 +237,13 @@
 						>
 							{{ perscription.medicines[i].help }}
 						</span>
-						<span
-							:class="'medicines-name medicines-' + i"
-							v-for="(item, i) in perscription.medicines"
-						>
-							{{ perscription.medicines[i].name }}
-						</span>
+
 						<!-- comment -->
 						<span class="comment">
 							{{ perscription.comment }}
+						</span>
+						<span class="periodOfUse">
+							{{ periodOfUse }}
 						</span>
 					</div>
 				</div>
@@ -270,6 +279,7 @@ export default {
 	},
 	data() {
 		return {
+			periodOfUse: '3',
 			date: '2020-01-09',
 			year: '2020',
 			month: '01',
@@ -488,6 +498,11 @@ export default {
 	font-size: 12px;
 	position: absolute;
 	top: 194.5px;
+}
+.periodOfUse {
+	position: absolute;
+	top: 840px;
+	left: 283px;
 }
 .year {
 	left: 204px;
