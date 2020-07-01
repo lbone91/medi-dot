@@ -380,7 +380,7 @@ export default {
 				p.document.close();
 				p.focus();
 				p.window.print();
-				p.close();
+				//p.close();
 			}, 1000);
 		},
 		sendPerscription() {
