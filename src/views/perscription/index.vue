@@ -1,7 +1,7 @@
 <template>
-	<div class="perscription-container">
+	<div class="perscription-container" style="margin-top: 61px">
 		<div style="text-align: center">
-			<p class="font-weight-bold">Medi Dot 처방전 출력 데모 프로그램</p>
+			<p class="font-weight-bold">처방전 출력</p>
 		</div>
 		<div v-if="mode === 1">
 			<el-form label-position="left" label-width="100px">

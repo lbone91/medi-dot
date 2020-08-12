@@ -5,6 +5,7 @@ Vue.use(Router)
 
 /* Layout */
 
+
 /**
  * Note: sub-menu only appear when route children.length >= 1
  * Detail see: https://panjiachen.github.io/vue-element-admin-site/guide/essentials/router-and-nav.html
@@ -32,10 +33,13 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/',
-      name: 'prescription',
-      component: () => import('@/views/main/index')
-    }
+          path: '/perscription',
+          component: () => import('@/views/perscription/index'),
+        },
+        {
+            path: '/receipt',
+            component: () => import('@/views/receipt/index'),
+      },
   ]
 })
 
