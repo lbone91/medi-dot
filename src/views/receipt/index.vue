@@ -69,7 +69,7 @@
 							>{{ receipt.patient.ward_no }}</span
 						>
 						<span
-							class="receipt-content line-number-2 receipt-patient-insup_type"
+							class="receipt-content line-text-2 receipt-patient-insup_type"
 							>{{ receipt.patient.insup_type }}</span
 						>
 						<span
@@ -472,7 +472,7 @@ export default {
 					epartment: '소화기내과', // 진료과목
 					drg_no: '01234', // 질병군(DRG) 번호
 					ward_no: '401', // 병실
-					insup_type: '20', // (직장조합, 지역조합, 지역3차) -> 건강보험, 의료급여, 보훈
+					insup_type: '건강보험', // (직장조합, 지역조합, 지역3차) -> 건강보험, 의료급여, 보훈
 					issue_no: '202008-0100', // 영수증번호
 				},
 				data: {
