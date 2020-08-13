@@ -81,10 +81,10 @@ export function getReceiptPrintStyle() {
 		' .line-mri {top: 13.12cm}' +
 		' .line-ultrasonic {top: 14cm}' +
 		' .line-medical_care_benefits {top: 15.1cm}' +
-		' .line-charge {top: 17.5cm}' +
-		' .line-hospital-1 {top: 18.87cm}' +
-		' .line-hospital-2 {top: 19.3cm}' +
-		' .line-issue_date { top: 19.75cm }' +
+		' .line-charge {top: 17.45cm}' +
+		' .line-hospital-1 {top: 18.78cm}' +
+		' .line-hospital-2 {top: 19.22cm}' +
+		' .line-issue_date { top: 19.65cm }' +
 		' .line-charge-summary {right: 0.2cm}' +
 		' .receipt-patient-reg_no { left: 1cm }' +
 		' .receipt-patient-name { left: 5.3cm}' +

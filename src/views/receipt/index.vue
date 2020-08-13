@@ -491,7 +491,7 @@
 							>{{ receipt.data.charge.payment.total }}</span
 						>
 						<!-- 요양기관 종류 -->
-						<span style="top: 18.4cm; left: 7.6cm" class="receipt-content"
+						<span style="top: 18.35cm; left: 7.6cm" class="receipt-content"
 							>V</span
 						>
 						<!-- 사업자 정보 -->
