@@ -3,7 +3,6 @@
 		<div style="text-align: center">
 			<p class="font-weight-bold">영수증 출력</p>
 		</div>
-
 		<el-button size="mini" @click="print">출력</el-button>
 		<div id="receipt" v-if="isPrint">
 			<div class="page">
@@ -12,6 +11,7 @@
 						<span style="top: 0.6cm; left: 4.4cm" class="receipt-content"
 							>V</span
 						>
+
 						<!-- Line 1 -->
 						<span
 							class="receipt-content line-number-1 receipt-patient-reg_no"
@@ -559,7 +559,7 @@ export default {
 					tel: '02-442-5181', // 전화번호
 					address: '서울시 마포구 백범로31번길 21', // 사업장 소재지
 					doctor: '한승훈', // 대표자
-					issue_date: '2020-08-10', // 계산서 날짜
+					issue_date: this.getFormatDate(new Date()), // 계산서 날짜
 				},
 
 				patient: {
@@ -567,8 +567,8 @@ export default {
 					name: '김환자', // 환자 성명
 					date: {
 						// 진료기간
-						from: '2020-08-10',
-						to: '2020-08-11',
+						from: this.getFormatDate(new Date()),
+						to: this.getFormatDate(new Date()),
 					},
 					extra: '야간', // 야간 혹은 공휴일 진료
 					epartment: '신경외과', // 진료과목
@@ -865,6 +865,14 @@ export default {
 		};
 	},
 	methods: {
+		getFormatDate(date) {
+			var year = date.getFullYear(); //yyyy
+			var month = 1 + date.getMonth(); //M
+			month = month >= 10 ? month : '0' + month; //month 두자리로 저장
+			var day = date.getDate(); //d
+			day = day >= 10 ? day : '0' + day; //day 두자리로 저장
+			return year + '-' + month + '-' + day;
+		},
 		print() {
 			this.isPrint = true;
 			setTimeout(() => {
