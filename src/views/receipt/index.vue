@@ -147,6 +147,74 @@
 							receipt.data.details.basic_tx.meals.non_rmb.etc
 						}}</span>
 
+						<!-- 투약 및 조제료 -행위료 -->
+						<span
+							class="receipt-content line-dosing-behavior charge charge-1"
+							>{{
+								receipt.data.details.basic_tx.dosing.behavior.rmb.partial
+									.personal
+							}}</span
+						>
+						<span
+							class="receipt-content line-dosing-behavior charge charge-2"
+							>{{
+								receipt.data.details.basic_tx.dosing.behavior.rmb.partial
+									.public_corp
+							}}</span
+						>
+						<span
+							class="receipt-content line-dosing-behavior charge charge-3"
+							>{{
+								receipt.data.details.basic_tx.dosing.behavior.rmb.all.personal
+							}}</span
+						>
+						<span
+							class="receipt-content line-dosing-behavior charge charge-4"
+							>{{
+								receipt.data.details.basic_tx.dosing.behavior.non_rmb.option
+							}}</span
+						>
+						<span
+							class="receipt-content line-dosing-behavior charge charge-5"
+							>{{
+								receipt.data.details.basic_tx.dosing.behavior.non_rmb.etc
+							}}</span
+						>
+
+						<!-- 투약 및 조제료-약품비 -->
+						<span
+							class="receipt-content line-dosing-medication charge charge-1"
+							>{{
+								receipt.data.details.basic_tx.dosing.medication.rmb.partial
+									.personal
+							}}</span
+						>
+						<span
+							class="receipt-content line-dosing-medication charge charge-2"
+							>{{
+								receipt.data.details.basic_tx.dosing.medication.rmb.partial
+									.public_corp
+							}}</span
+						>
+						<span
+							class="receipt-content line-dosing-medication charge charge-3"
+							>{{
+								receipt.data.details.basic_tx.dosing.medication.rmb.all.personal
+							}}</span
+						>
+						<span
+							class="receipt-content line-dosing-medication charge charge-4"
+							>{{
+								receipt.data.details.basic_tx.dosing.medication.non_rmb.option
+							}}</span
+						>
+						<span
+							class="receipt-content line-dosing-medication charge charge-5"
+							>{{
+								receipt.data.details.basic_tx.dosing.medication.non_rmb.etc
+							}}</span
+						>
+
 						<!-- 주사료-행위료 -->
 						<span
 							class="receipt-content line-injection-behavior charge charge-1"
@@ -337,6 +405,40 @@
 							receipt.data.details.optinal_tx.ultrasonic.non_rmb.etc
 						}}</span>
 
+						<!-- 요양급여 -->
+						<span
+							class="receipt-content line-medical_care_benefits charge charge-1"
+							>{{
+								receipt.data.details.etx.medical_care_benefits.rmb.partial
+									.personal
+							}}</span
+						>
+						<span
+							class="receipt-content line-medical_care_benefits charge charge-2"
+							>{{
+								receipt.data.details.etx.medical_care_benefits.rmb.partial
+									.public_corp
+							}}</span
+						>
+						<span
+							class="receipt-content line-medical_care_benefits charge charge-3"
+							>{{
+								receipt.data.details.etx.medical_care_benefits.rmb.all.personal
+							}}</span
+						>
+						<span
+							class="receipt-content line-medical_care_benefits charge charge-4"
+							>{{
+								receipt.data.details.etx.medical_care_benefits.non_rmb.option
+							}}</span
+						>
+						<span
+							class="receipt-content line-medical_care_benefits charge charge-5"
+							>{{
+								receipt.data.details.etx.medical_care_benefits.non_rmb.etc
+							}}</span
+						>
+
 						<!-- 합계 -->
 						<span class="receipt-content line-charge charge charge-1">{{
 							receipt.data.charge.rmb_patient_partial
@@ -453,7 +555,7 @@ export default {
 				hospital: {
 					type: 'clinic', // 요양기관 종류
 					biz_reg_no: '2345678901', // 사업자등록번호
-					name: '삼성안과', // 상호
+					name: '록스종합의원', // 상호
 					tel: '02-442-5181', // 전화번호
 					address: '서울시 마포구 백범로31번길 21', // 사업장 소재지
 					doctor: '한승훈', // 대표자
@@ -469,7 +571,7 @@ export default {
 						to: '2020-08-11',
 					},
 					extra: '야간', // 야간 혹은 공휴일 진료
-					epartment: '소화기내과', // 진료과목
+					epartment: '신경외과', // 진료과목
 					drg_no: '01234', // 질병군(DRG) 번호
 					ward_no: '401', // 병실
 					insup_type: '건강보험', // (직장조합, 지역조합, 지역3차) -> 건강보험, 의료급여, 보훈
@@ -481,8 +583,8 @@ export default {
 							doctor_fee: {
 								rmb: {
 									partial: {
-										personal: '1,000',
-										public_corp: '2,000',
+										personal: '22,346',
+										public_corp: '89,384',
 									},
 									all: {
 										personal: '',
@@ -497,8 +599,8 @@ export default {
 								single: {
 									rmb: {
 										partial: {
-											personal: '5,000',
-											public_corp: '20,000',
+											personal: '',
+											public_corp: '',
 										},
 										all: {
 											personal: '',
@@ -515,8 +617,8 @@ export default {
 							meals: {
 								rmb: {
 									partial: {
-										personal: '5,000',
-										public_corp: '20,000',
+										personal: '',
+										public_corp: '',
 									},
 									all: {
 										personal: '',
@@ -528,15 +630,11 @@ export default {
 								},
 							},
 							dosing: {
-								behavior: {},
-								medication: {},
-							},
-							injection: {
 								behavior: {
 									rmb: {
 										partial: {
-											personal: '200',
-											public_corp: '800',
+											personal: '357',
+											public_corp: '1,426',
 										},
 										all: {
 											personal: '',
@@ -550,11 +648,43 @@ export default {
 								medication: {
 									rmb: {
 										partial: {
-											personal: '1,000',
-											public_corp: '4,000',
+											personal: '5,094',
+											public_corp: '20,380',
 										},
 										all: {
-											personal: '100',
+											personal: '',
+										},
+									},
+									non_rmb: {
+										option: '',
+										etc: '',
+									},
+								},
+							},
+							injection: {
+								behavior: {
+									rmb: {
+										partial: {
+											personal: '1,107',
+											public_corp: '4,428',
+										},
+										all: {
+											personal: '',
+										},
+									},
+									non_rmb: {
+										option: '',
+										etc: '',
+									},
+								},
+								medication: {
+									rmb: {
+										partial: {
+											personal: '1,450',
+											public_corp: '5,800',
+										},
+										all: {
+											personal: '',
 										},
 									},
 									non_rmb: {
@@ -568,8 +698,8 @@ export default {
 							check: {
 								rmb: {
 									partial: {
-										personal: '500',
-										public_corp: '2,000',
+										personal: '15,815',
+										public_corp: '63,240',
 									},
 									all: {
 										personal: '',
@@ -583,8 +713,8 @@ export default {
 							video: {
 								rmb: {
 									partial: {
-										personal: '500',
-										public_corp: '2,000',
+										personal: '',
+										public_corp: '',
 									},
 									all: {
 										personal: '',
@@ -599,8 +729,8 @@ export default {
 							meterial: {
 								rmb: {
 									partial: {
-										personal: '500',
-										public_corp: '2,000',
+										personal: '138',
+										public_corp: '552',
 									},
 									all: {
 										personal: '',
@@ -608,14 +738,14 @@ export default {
 								},
 								non_rmb: {
 									option: '',
-									etc: '',
+									etc: '10,560',
 								},
 							},
 							physical: {
 								rmb: {
 									partial: {
-										personal: '200',
-										public_corp: '800',
+										personal: '',
+										public_corp: '',
 									},
 									all: {
 										personal: '',
@@ -633,8 +763,8 @@ export default {
 							ct: {
 								rmb: {
 									partial: {
-										personal: '1,000',
-										public_corp: '3,000',
+										personal: '42,184',
+										public_corp: '42,184',
 									},
 									all: {
 										personal: '',
@@ -648,8 +778,8 @@ export default {
 							mri: {
 								rmb: {
 									partial: {
-										personal: '',
-										public_corp: '',
+										personal: '89,559',
+										public_corp: '89,559',
 									},
 									all: {
 										personal: '',
@@ -657,7 +787,7 @@ export default {
 								},
 								non_rmb: {
 									option: '',
-									etc: '4,000',
+									etc: '',
 								},
 							},
 							pet: {},
@@ -673,30 +803,46 @@ export default {
 								},
 								non_rmb: {
 									option: '',
-									etc: '1,000',
+									etc: '',
 								},
 							},
 							prosthetic_iron: {},
 						},
-						etx: {},
+						etx: {
+							medical_care_benefits: {
+								rmb: {
+									partial: {
+										personal: '2,288',
+										public_corp: '572',
+									},
+									all: {
+										personal: '',
+									},
+								},
+								non_rmb: {
+									option: '',
+									etc: '',
+								},
+							},
+						},
 					},
 					charge: {
-						rmb_patient_partial: '14,400', // 급여 > 일부 본인부담 > 본인부담금 합계
-						rmb_hira: '56,600', // 급여 > 일부 본인부담 > 공단부담금 합계
-						rmb_patient_all: '100', // 급여 > 전액 본인부담 합계
+						rmb_patient_partial: '480,905', // 급여 > 일부 본인부담 > 본인부담금 합계
+						rmb_hira: '319,796', // 급여 > 일부 본인부담 > 공단부담금 합계
+						rmb_patient_all: '', // 급여 > 전액 본인부담 합계
 						non_rmb_option: '', // 비급여 > 선택진료료	합계
-						non_rmb_etc: '5,000', // 비급여 > 선택진료료 외	합계
+						non_rmb_etc: '10,560', // 비급여 > 선택진료료 외	합계
 						max_shares: '', // 상한액 초과금
-						expanses_total: '57,600', // 진료비 총액
-						patient_total: '18,000', // 환자부담 총액
+						expanses_total: '511,260', // 진료비 총액
+						patient_total: '191,460', // 환자부담 총액
 						patient_done: '', // 이미 납부한 금액
-						patient_yet: '18,000', // 납부할 금액
+						patient_yet: '191,460', // 납부할 금액
 						payment: {
 							// 납부한 금액
-							credit: '18,000', // 납부한 금액 > 카드, 현금영수증, 현금, 합계
+							credit: '191,460', // 납부한 금액 > 카드, 현금영수증, 현금, 합계
 							cash: '',
 							hometax: '',
-							total: '18,000',
+							total: '191,460',
 						},
 					},
 				},
@@ -740,7 +886,7 @@ export default {
 				p.document.close();
 				p.focus();
 				p.window.print();
-				p.close();
+				//p.close();
 				this.isPrint = false;
 			}, 1000);
 		},

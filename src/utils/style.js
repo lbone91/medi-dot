@@ -68,6 +68,8 @@ export function getReceiptPrintStyle() {
 		' .line-number-2 {top: 2.55cm}' +
 		' .line-docter_fee {top: 4.35cm}' +
 		' .line-admission_fee-single {top: 4.81cm}' +
+		' .line-dosing-behavior {top: 6.56cm}' +
+		' .line-dosing-medication {top: 7.02cm}' +
 		' .line-injection-behavior {top: 7.45cm}' +
 		' .line-injection-medication {top: 7.92cm}' +
 		' .line-meals {top: 6.1cm}' +
@@ -78,6 +80,7 @@ export function getReceiptPrintStyle() {
 		' .line-ct {top: 12.66cm}' +
 		' .line-mri {top: 13.12cm}' +
 		' .line-ultrasonic {top: 14cm}' +
+		' .line-medical_care_benefits {top: 15.1cm}' +
 		' .line-charge {top: 17.5cm}' +
 		' .line-hospital-1 {top: 18.87cm}' +
 		' .line-hospital-2 {top: 19.3cm}' +
@@ -96,7 +99,7 @@ export function getReceiptPrintStyle() {
 		' .receipt-patient-epartment { left: 1cm}' +
 		' .receipt-patient-drg_no { left: 5.3cm}' +
 		' .receipt-patient-ward_no { left: 8.9cm}' +
-		' .receipt-patient-insup_type { left: 11.3cm}' +
+		' .receipt-patient-insup_type { left: 11cm}' +
 		' .receipt-patient-issue_no { left: 14cm}' +
 		' .receipt-issue_date-year { left: 5.6cm}' +
 		' .receipt-issue_date-month { left: 7.8cm}' +
