@@ -537,7 +537,7 @@ export default {
 	computed: {
 		styleObject() {
 			return {
-				'background-image': `url(${require('../../assets/receipt.jpg')})`,
+				'background-image': `url(${require('../../assets/receipt.png')})`,
 				'background-repeat': 'round',
 				width: '640px',
 				height: '1080px',
